@@ -4,7 +4,7 @@ import useStyles from '../hooks/useStyles';
 import css from './app.css';
 
 const App = () => {
-    const styles = useStyles(css);
+    const styles = useStyles([css]);
 
     return <div className={styles.app}>Hello!</div>;
 };
