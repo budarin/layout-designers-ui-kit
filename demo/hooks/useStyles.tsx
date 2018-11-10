@@ -12,10 +12,7 @@ const useStyles = <A extends Array<ICSSModule>>(css: A): UnionToIntersection<A[n
         return () => css.forEach(item => item.unuse());
     }, []);
 
-    return css.reduce((acc: object, item) => {
-        // @ts-ignore
-        return (acc = Object.assign({}, acc, item.locals));
-    }, {}) as any;
+    return css.reduce((acc: object, item) => (acc = Object.assign({}, acc, item.locals)), {}) as any;
 };
 
 export default useStyles;
