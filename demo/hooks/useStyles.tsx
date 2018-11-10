@@ -1,4 +1,3 @@
-// @ts-ignore
 import { useEffect } from 'react';
 
 // UnionToIntersection does what is says, transforming A | B |C to A & B &C
