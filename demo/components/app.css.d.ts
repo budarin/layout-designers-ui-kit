@@ -4,8 +4,6 @@ export interface IAppCss {
     };
     readonly use: Function;
     readonly unuse: Function;
-    readonly source: string;
-    readonly app: string;
 }
 
 declare const styles: IAppCss;
