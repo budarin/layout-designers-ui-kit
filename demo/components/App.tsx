@@ -1,13 +1,16 @@
 // @ts-ignore
-import React, { useEffect } from 'react';
+import React from 'react';
 import useStyles from '../hooks/useStyles';
-import css from './app.css';
-import css1 from './app1.css';
+
+import AppLayout from '../components/AppLayout';
+
+import globalStyles from '../../components/styles/all_styles.css';
+import appCSS from './app.css';
 
 const App = () => {
-    const styles = useStyles([css, css1]);
+    useStyles([globalStyles, appCSS]);
 
-    return <div className={`${styles.app} ${styles.app1}`}>Hello!</div>;
+    return <AppLayout />;
 };
 
 export default App;

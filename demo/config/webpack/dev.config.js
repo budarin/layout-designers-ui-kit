@@ -20,7 +20,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(ts|tsx)?$/,
+                test: /\.(js|ts|tsx)?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
@@ -52,7 +52,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', '.json'],
         modules: ['node_modules', 'src'],
     },
     externals: {
