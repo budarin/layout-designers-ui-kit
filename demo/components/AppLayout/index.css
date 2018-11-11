@@ -1,0 +1,29 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    margin-left: 0px;
+}
+
+.container.no_margin_left {
+    margin-left: -250px;
+}
+
+aside {
+    width: 250px;
+    height: 100vh;
+    color: #333;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: #eee;
+}
+
+.page_content {
+    background: #fff;
+    color: #000;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
