@@ -1,8 +1,26 @@
 import React from 'react';
 import cn from 'classnames';
+// @ts-ignore
+import Highlight, { defaultProps } from 'prism-react-renderer';
+// @ts-ignore
+import theme from 'prism-react-renderer/themes/duotoneLight';
 
 import useStyles from '../../hooks/useStyles';
 import contentCSS from './index.css';
+
+const exampleCode = `
+(function someDemo() {
+  var test = "Hello World!";
+  console.log(test);
+})();
+
+return () => <App />;
+`;
+
+const props = {
+    ...defaultProps,
+    theme,
+};
 
 const Content = () => {
     const styles = useStyles([contentCSS]);
@@ -29,22 +47,20 @@ const Content = () => {
                     <div className={styles.title}>
                         <h2>Пример</h2>
                     </div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate pariatur deleniti dicta, totam
-                    necessitatibus quas voluptas cum repudiandae blanditiis qui, possimus at nobis saepe fugiat. Dicta
-                    cum, similique ipsa laborum repudiandae error optio ullam eligendi consequuntur? Molestias est,
-                    accusantium illum obcaecati alias cupiditate facilis! Dolore officiis ullam ratione, assumenda
-                    deleniti omnis unde nisi eius saepe, ex, optio rem quae vitae dignissimos. Quidem quae error
-                    quibusdam cupiditate sequi suscipit, facere ut dolorum omnis, expedita mollitia nisi neque
-                    temporibus nostrum blanditiis eveniet nihil illo voluptates, at alias adipisci? Fuga minus ratione
-                    dolores minima, autem aspernatur nulla hic, reiciendis beatae magnam eaque id laborum a dignissimos
-                    magni quo quaerat fugit, sunt sapiente expedita repudiandae. Molestias commodi doloremque, doloribus
-                    ullam aliquam ad sed totam facilis vitae ratione, velit eos officiis. Iste provident ipsum ea quasi
-                    consectetur voluptate facere corrupti. Excepturi odio rem alias nostrum velit ipsam illum voluptates
-                    ad ut sapiente blanditiis, dolor deleniti quisquam iste nihil architecto, vel ea magnam error?
-                    Sapiente repellat, distinctio itaque blanditiis magnam illum! Veniam rem, accusantium deserunt atque
-                    harum ut eaque ab excepturi, totam similique esse magnam repellendus optio expedita saepe maxime
-                    molestiae odit non neque praesentium, dignissimos consequuntur fugiat vitae. Cupiditate velit ea
-                    dolores corporis? Reprehenderit, et!
+
+                    <Highlight {...props} code={exampleCode} language="jsx">
+                        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                            <pre className={className} style={style}>
+                                {tokens.map((line, i) => (
+                                    <div {...getLineProps({ line, key: i })}>
+                                        {line.map((token, key) => (
+                                            <span {...getTokenProps({ token, key })} />
+                                        ))}
+                                    </div>
+                                ))}
+                            </pre>
+                        )}
+                    </Highlight>
                 </div>
 
                 <div className={codePrevieClass} tabIndex={0}>

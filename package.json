@@ -46,6 +46,7 @@
         "postcss-preset-env": "^6.4.0",
         "prettier": "^1.15.2",
         "pretty-quick": "^1.8.0",
+        "prism-react-renderer": "^0.1.4",
         "prun": "^1.0.1",
         "rimraf": "^2.6.2",
         "script-ext-html-webpack-plugin": "^2.1.3",
