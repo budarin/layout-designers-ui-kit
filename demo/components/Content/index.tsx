@@ -22,7 +22,7 @@ const codeString = `(function someDemo() {
 return () => <App />;
 `;
 
-const cssString = `element.style {
+const cssString = `.foo {
     display: block;
     overflow-x: auto;
     padding: 0.5em;
