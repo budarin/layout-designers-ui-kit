@@ -1,15 +1,20 @@
 import React from 'react';
 import cn from 'classnames';
-// @ts-ignore
-import Highlight, { defaultProps } from 'prism-react-renderer';
-// @ts-ignore
-import theme from 'prism-react-renderer/themes/duotoneLight';
 
 import useStyles from '../../hooks/useStyles';
 import contentCSS from './index.css';
 
-const exampleCode = `
-(function someDemo() {
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/light';
+import js from 'react-syntax-highlighter/languages/hljs/javascript';
+import css from 'react-syntax-highlighter/languages/hljs/css';
+import markdown from 'react-syntax-highlighter/languages/hljs/markdown';
+import docco from 'react-syntax-highlighter/styles/hljs/github-gist';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
+SyntaxHighlighter.registerLanguage('css', css);
+SyntaxHighlighter.registerLanguage('markdown', markdown);
+
+const codeString = `(function someDemo() {
   var test = "Hello World!";
   console.log(test);
 })();
@@ -17,10 +22,31 @@ const exampleCode = `
 return () => <App />;
 `;
 
-const props = {
-    ...defaultProps,
-    theme,
-};
+const cssString = `.foo {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: white;
+    color: black;
+}`;
+
+const markdownString = `## React Syntax Highlighter
+
+[![CircleCI](https://circleci.com/gh/conorhastings/react-syntax-highlighter.svg?style=svg)](https://circleci.com/gh/conorhastings/react-syntax-highlighter)
+[![codecov](https://codecov.io/gh/conorhastings/react-syntax-highlighter/branch/master/graph/badge.svg)](https://codecov.io/gh/conorhastings/react-syntax-highlighter)
+[![npm](https://img.shields.io/npm/dw/react-syntax-highlighter.svg?style=flat-square)](https://www.npmjs.com/package/react-syntax-highlighter)
+
+Syntax highlighting component for \`React\` using the seriously super amazing <a href="https://github.com/wooorm/lowlight">lowlight</a> and <a href="https://github.com/wooorm/refractor">refractor</a> by <a href="https://github.com/wooorm">wooorm</a>
+
+Check out a small demo <a href="http://conor.rodeo/react-syntax-highlighter/demo/">here</a> and see the component in action highlighting the generated test code <a href="http://conor.rodeo/redux-test-recorder/demo/">here</a>. 
+
+For React Native you can use <a href='https://github.com/conorhastings/react-native-syntax-highlighter'>react-native-syntax-highlighter</a>
+
+### Install
+
+\`npm install react-syntax-highlighter --save\`
+
+### Why This One?`;
 
 const Content = () => {
     const styles = useStyles([contentCSS]);
@@ -48,19 +74,9 @@ const Content = () => {
                         <h2>Пример</h2>
                     </div>
 
-                    <Highlight {...props} code={exampleCode} language="jsx">
-                        {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                            <pre className={className} style={style}>
-                                {tokens.map((line, i) => (
-                                    <div {...getLineProps({ line, key: i })}>
-                                        {line.map((token, key) => (
-                                            <span {...getTokenProps({ token, key })} />
-                                        ))}
-                                    </div>
-                                ))}
-                            </pre>
-                        )}
-                    </Highlight>
+                    <SyntaxHighlighter language="javascript" style={docco}>
+                        {codeString}
+                    </SyntaxHighlighter>
                 </div>
 
                 <div className={codePrevieClass} tabIndex={0}>
@@ -70,22 +86,9 @@ const Content = () => {
                         </div>
                         <div className={styles.copy_btn}>Copy</div>
                     </div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate pariatur deleniti dicta, totam
-                    necessitatibus quas voluptas cum repudiandae blanditiis qui, possimus at nobis saepe fugiat. Dicta
-                    cum, similique ipsa laborum repudiandae error optio ullam eligendi consequuntur? Molestias est,
-                    accusantium illum obcaecati alias cupiditate facilis! Dolore officiis ullam ratione, assumenda
-                    deleniti omnis unde nisi eius saepe, ex, optio rem quae vitae dignissimos. Quidem quae error
-                    quibusdam cupiditate sequi suscipit, facere ut dolorum omnis, expedita mollitia nisi neque
-                    temporibus nostrum blanditiis eveniet nihil illo voluptates, at alias adipisci? Fuga minus ratione
-                    dolores minima, autem aspernatur nulla hic, reiciendis beatae magnam eaque id laborum a dignissimos
-                    magni quo quaerat fugit, sunt sapiente expedita repudiandae. Molestias commodi doloremque, doloribus
-                    ullam aliquam ad sed totam facilis vitae ratione, velit eos officiis. Iste provident ipsum ea quasi
-                    consectetur voluptate facere corrupti. Excepturi odio rem alias nostrum velit ipsam illum voluptates
-                    ad ut sapiente blanditiis, dolor deleniti quisquam iste nihil architecto, vel ea magnam error?
-                    Sapiente repellat, distinctio itaque blanditiis magnam illum! Veniam rem, accusantium deserunt atque
-                    harum ut eaque ab excepturi, totam similique esse magnam repellendus optio expedita saepe maxime
-                    molestiae odit non neque praesentium, dignissimos consequuntur fugiat vitae. Cupiditate velit ea
-                    dolores corporis? Reprehenderit, et!
+                    <SyntaxHighlighter language="css" style={docco}>
+                        {cssString}
+                    </SyntaxHighlighter>
                 </div>
 
                 <div className={codePrevieClass} tabIndex={0}>
@@ -95,22 +98,9 @@ const Content = () => {
                         </div>
                         <div className={styles.copy_btn}>Copy</div>
                     </div>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem amet officiis magnam ad
-                    reiciendis, asperiores nulla perspiciatis obcaecati temporibus, animi fugiat facere et itaque
-                    accusamus hic enim! Reiciendis tenetur recusandae hic porro unde accusamus excepturi delectus veniam
-                    autem, eveniet aperiam aliquam. Nam sed voluptatibus, nesciunt quasi tempore facilis cum aliquid
-                    officiis aliquam facere cumque nobis quidem, accusamus iusto quia ullam similique repudiandae. Ipsum
-                    doloribus eveniet error quibusdam blanditiis commodi. Placeat qui, voluptas modi exercitationem eum,
-                    quae fuga fugit dicta veniam amet sed eligendi totam facere nisi ab suscipit iste perspiciatis
-                    incidunt obcaecati quasi! Odit ad possimus eum blanditiis corrupti, nisi ut impedit vel a pariatur.
-                    Dolore ullam possimus similique molestiae magni praesentium. Nesciunt tempore quos, vel consequatur
-                    at veniam molestiae a autem minus distinctio omnis perspiciatis nulla repellat ullam earum magni
-                    culpa soluta officiis exercitationem ipsa voluptatum dolorem. Ad excepturi voluptatum quidem et
-                    dignissimos qui soluta repellendus hic aut, numquam debitis illum nulla in at, praesentium dolor
-                    itaque consequuntur labore nostrum! Ipsam, rerum. Dolores odit magnam, optio voluptatem itaque
-                    cumque veritatis quis nostrum, harum earum nemo, ullam quae quidem laborum assumenda hic iste
-                    aliquid magni quas tenetur ducimus ea expedita quos. Repellat iusto, eos amet architecto praesentium
-                    magnam eum sit.
+                    <SyntaxHighlighter language="markdown" style={docco}>
+                        {markdownString}
+                    </SyntaxHighlighter>
                 </div>
             </div>
         </>
