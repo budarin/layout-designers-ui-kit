@@ -7,10 +7,12 @@ import contentCSS from './index.css';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/light';
 import js from 'react-syntax-highlighter/languages/hljs/javascript';
 import css from 'react-syntax-highlighter/languages/hljs/css';
-import docco from 'react-syntax-highlighter/styles/hljs/vs';
+import markdown from 'react-syntax-highlighter/languages/hljs/markdown';
+import docco from 'react-syntax-highlighter/styles/hljs/github-gist';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 SyntaxHighlighter.registerLanguage('css', css);
+SyntaxHighlighter.registerLanguage('markdown', markdown);
 
 const codeString = `(function someDemo() {
   var test = "Hello World!";
@@ -27,6 +29,24 @@ const cssString = `element.style {
     background: white;
     color: black;
 }`;
+
+const markdownString = `## React Syntax Highlighter
+
+[![CircleCI](https://circleci.com/gh/conorhastings/react-syntax-highlighter.svg?style=svg)](https://circleci.com/gh/conorhastings/react-syntax-highlighter)
+[![codecov](https://codecov.io/gh/conorhastings/react-syntax-highlighter/branch/master/graph/badge.svg)](https://codecov.io/gh/conorhastings/react-syntax-highlighter)
+[![npm](https://img.shields.io/npm/dw/react-syntax-highlighter.svg?style=flat-square)](https://www.npmjs.com/package/react-syntax-highlighter)
+
+Syntax highlighting component for \`React\` using the seriously super amazing <a href="https://github.com/wooorm/lowlight">lowlight</a> and <a href="https://github.com/wooorm/refractor">refractor</a> by <a href="https://github.com/wooorm">wooorm</a>
+
+Check out a small demo <a href="http://conor.rodeo/react-syntax-highlighter/demo/">here</a> and see the component in action highlighting the generated test code <a href="http://conor.rodeo/redux-test-recorder/demo/">here</a>. 
+
+For React Native you can use <a href='https://github.com/conorhastings/react-native-syntax-highlighter'>react-native-syntax-highlighter</a>
+
+### Install
+
+\`npm install react-syntax-highlighter --save\`
+
+### Why This One?`;
 
 const Content = () => {
     const styles = useStyles([contentCSS]);
@@ -78,22 +98,9 @@ const Content = () => {
                         </div>
                         <div className={styles.copy_btn}>Copy</div>
                     </div>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem amet officiis magnam ad
-                    reiciendis, asperiores nulla perspiciatis obcaecati temporibus, animi fugiat facere et itaque
-                    accusamus hic enim! Reiciendis tenetur recusandae hic porro unde accusamus excepturi delectus veniam
-                    autem, eveniet aperiam aliquam. Nam sed voluptatibus, nesciunt quasi tempore facilis cum aliquid
-                    officiis aliquam facere cumque nobis quidem, accusamus iusto quia ullam similique repudiandae. Ipsum
-                    doloribus eveniet error quibusdam blanditiis commodi. Placeat qui, voluptas modi exercitationem eum,
-                    quae fuga fugit dicta veniam amet sed eligendi totam facere nisi ab suscipit iste perspiciatis
-                    incidunt obcaecati quasi! Odit ad possimus eum blanditiis corrupti, nisi ut impedit vel a pariatur.
-                    Dolore ullam possimus similique molestiae magni praesentium. Nesciunt tempore quos, vel consequatur
-                    at veniam molestiae a autem minus distinctio omnis perspiciatis nulla repellat ullam earum magni
-                    culpa soluta officiis exercitationem ipsa voluptatum dolorem. Ad excepturi voluptatum quidem et
-                    dignissimos qui soluta repellendus hic aut, numquam debitis illum nulla in at, praesentium dolor
-                    itaque consequuntur labore nostrum! Ipsam, rerum. Dolores odit magnam, optio voluptatem itaque
-                    cumque veritatis quis nostrum, harum earum nemo, ullam quae quidem laborum assumenda hic iste
-                    aliquid magni quas tenetur ducimus ea expedita quos. Repellat iusto, eos amet architecto praesentium
-                    magnam eum sit.
+                    <SyntaxHighlighter language="markdown" style={docco}>
+                        {markdownString}
+                    </SyntaxHighlighter>
                 </div>
             </div>
         </>
