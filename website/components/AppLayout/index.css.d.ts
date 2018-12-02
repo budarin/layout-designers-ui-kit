@@ -8,12 +8,6 @@ export interface IIndexCss {
     };
     readonly use: Function;
     readonly unuse: Function;
-    readonly source: string;
-    readonly container: string;
-    readonly no_margin_left: string;
-    readonly noMarginLeft: string;
-    readonly page_content: string;
-    readonly pageContent: string;
 }
 
 declare const styles: IIndexCss;
