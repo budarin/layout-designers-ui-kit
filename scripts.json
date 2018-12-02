@@ -1,18 +1,18 @@
 [
     {
         "name": "start",
-        "command": "webpack-dev-server --config ./demo/config/webpack/dev.config.js",
+        "command": "webpack-dev-server -r config/webpack/register-ts.js --config ./config/webpack/dev.config.js",
         "env": {
             "NODE_ENV": "development"
         }
     },
     {
-        "name": "clean-dist",
-        "command": "rimraf ./dist"
+        "name": "clean",
+        "command": "rimraf ./dist && rimraf ./.tmp"
     },
     {
         "name": "build",
-        "command": "prun clean-dist && webpack -p --config ./demo/config/webpack/prod.config.js",
+        "command": "prun clean && webpack -p -r config/webpack/register-ts.js --config ./config/webpack/prod.config.js",
         "env": {
             "NODE_ENV": "production"
         }

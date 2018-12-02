@@ -1,5 +1,6 @@
 /dist/
 /.tmp/
+/.vscode/
 /node-modules/
 package-lock.json
 tsconfig.json

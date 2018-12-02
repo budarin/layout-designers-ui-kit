@@ -4,7 +4,7 @@ const config = {
     plugins: [
         // @ts-ignore
         require('postcss-mixins')({
-            mixinsDir: path.resolve('demo/config/postCSS/mixins'),
+            mixinsDir: path.resolve('config/postCSS/mixins'),
         }),
         // @ts-ignore
         require('postcss-preset-env')({

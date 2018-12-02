@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //@ts-ignore
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
@@ -8,14 +7,15 @@ module.exports = {
     cache: true,
     target: 'web',
     profile: false,
-    mode: 'development',
-    devtool: 'inline-source-map',
+    mode: 'production',
+    devtool: 'none',
     entry: {
-        index: ['./demo/client/index.tsx'],
+        index: ['./website/client/index.tsx'],
     },
     output: {
-        filename: 'index.js',
+        filename: 'index.[contenthash].js',
         path: path.resolve('./dist'),
+        chunkFilename: '[name].[chunkhash].js',
     },
     module: {
         rules: [
@@ -38,10 +38,12 @@ module.exports = {
                         options: {
                             modules: true,
                             browser: true,
-                            server: false,
+                            server: true,
                             camelCase: true,
                             importLoaders: 1,
-                            localIdentName: '[name].[local]_[hash:7]',
+                            localIdentName: '[hash:base64:8]',
+                            sourceMap: false,
+                            minify: true,
                         },
                     },
                     {
@@ -50,6 +52,21 @@ module.exports = {
                 ],
             },
         ],
+    },
+    optimization: {
+        runtimeChunk: {
+            name: 'manifest',
+        },
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    priority: -20,
+                    chunks: 'all',
+                },
+            },
+        },
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.json'],
@@ -60,24 +77,12 @@ module.exports = {
         'react-dom': 'ReactDOM',
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: './demo/assets/dev.html',
+            template: './website/assets/prod.html',
             inject: 'head',
         }),
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer',
         }),
     ],
-    devServer: {
-        port: 3000,
-        host: 'localhost',
-        hot: true,
-        inline: true,
-        overlay: true,
-        compress: false,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-        },
-    },
 };
