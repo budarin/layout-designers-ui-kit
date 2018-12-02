@@ -1,11 +1,11 @@
-import React from 'react';
+import { useLayoutEffect } from 'react';
 
 // UnionToIntersection does what is says, transforming A | B |C to A & B &C
 type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends ((k: infer I) => void) ? I : never;
 
 // A[number] is a trick to get a union of all values of a tuple
 const useStyles = <A extends ICSSModule[]>(css: A): UnionToIntersection<A[number]['locals']> => {
-    React.useEffect(() => {
+    useLayoutEffect(() => {
         css.forEach(item => {
             item.use();
         });

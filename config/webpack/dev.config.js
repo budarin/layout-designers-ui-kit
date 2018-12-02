@@ -11,7 +11,7 @@ module.exports = {
     target: 'web',
     profile: false,
     mode: 'development',
-    devtool: 'inline-source-map',
+    devtool: 'eval',
     entry: {
         index: ['./website/client/index.tsx'],
     },
