@@ -1,28 +1,36 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-//@ts-ignore
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ManifestPlugin from 'webpack-manifest-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
+
+import babelConfig from './babelLoaderConfig';
 
 module.exports = {
     cache: true,
     target: 'web',
     profile: false,
     mode: 'development',
-    devtool: 'inline-source-map',
+    devtool: 'eval',
     entry: {
-        index: ['./demo/client/index.tsx'],
+        index: ['./website/client/index.tsx'],
     },
     output: {
         filename: 'index.js',
         path: path.resolve('./dist'),
+        chunkFilename: '[name].[chunkhash].js',
+        hotUpdateChunkFilename: '[id].[hash].hot-update.js',
     },
     module: {
         rules: [
             {
-                test: /\.(js|ts|tsx)?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
+                test: /\.(ts|tsx|js|jsx)$/,
+                include: [path.resolve('./components'), path.resolve('./website')],
+                exclude: path.resolve('node_modules'),
+                use: {
+                    loader: 'babel-loader',
+                    options: babelConfig,
+                },
             },
             {
                 test: /\.css$/,
@@ -51,23 +59,25 @@ module.exports = {
             },
         ],
     },
+
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.json'],
         modules: ['node_modules', 'src'],
     },
-    externals: {
-        react: 'React',
-        'react-dom': 'ReactDOM',
-    },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new ManifestPlugin({
+            fileName: 'assets-manifest.json',
+            writeToFileEmit: true,
+        }),
         new HtmlWebpackPlugin({
-            template: './demo/assets/dev.html',
+            template: './website/assets/dev.html',
             inject: 'head',
         }),
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer',
         }),
+        new webpack.WatchIgnorePlugin([/css\.d\.ts$/]), // due to slow building ignore changes
     ],
     devServer: {
         port: 3000,
