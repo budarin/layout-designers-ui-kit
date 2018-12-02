@@ -1,10 +1,10 @@
 import path from 'path';
 import webpack from 'webpack';
-import babelConfig from './babelLoaderConfig';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
-import WriteFilePlugin from 'write-file-webpack-plugin';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
+
+import babelConfig from './babelLoaderConfig';
 
 module.exports = {
     cache: true,
@@ -77,7 +77,6 @@ module.exports = {
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer',
         }),
-        new WriteFilePlugin(),
         new webpack.WatchIgnorePlugin([/css\.d\.ts$/]), // due to slow building ignore changes
     ],
     devServer: {

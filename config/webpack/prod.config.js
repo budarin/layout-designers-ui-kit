@@ -1,7 +1,13 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-//@ts-ignore
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import OptimizeJsPlugin from 'optimize-js-plugin';
+import ManifestPlugin from 'webpack-manifest-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
+
+import babelConfig from './babelLoaderConfig';
 
 module.exports = {
     cache: true,
@@ -20,9 +26,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|ts|tsx)?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
+                test: /\.(ts|tsx|js|jsx)$/,
+                include: [path.resolve('./components'), path.resolve('./website')],
+                exclude: path.resolve('node_modules'),
+                use: {
+                    loader: 'babel-loader',
+                    options: babelConfig,
+                },
             },
             {
                 test: /\.css$/,
@@ -54,6 +64,8 @@ module.exports = {
         ],
     },
     optimization: {
+        occurrenceOrder: true,
+        minimizer: [new OptimizeJsPlugin({ sourceMap: false }), new TerserPlugin()],
         runtimeChunk: {
             name: 'manifest',
         },
@@ -83,6 +95,28 @@ module.exports = {
         }),
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer',
+        }),
+        new ManifestPlugin({
+            fileName: 'assets-manifest.json',
+            writeToFileEmit: true,
+        }),
+        new webpack.HashedModuleIdsPlugin(), // в результате хэши не будут неожиданно менят
+        new webpack.WatchIgnorePlugin([/css\.d\.ts$/]),
+        new webpack.SourceMapDevToolPlugin({
+            columns: false,
+            filename: '[file].map',
+            // @ts-ignore
+            publicPath: 'http://localhost/',
+            append: false,
+        }),
+        new CompressionPlugin({
+            cache: '.tmp/gzip',
+            filename: '[path].gz[query]',
+            test: /\.js(\?.*)?$/i,
+            compressionOptions: { level: 9, numiterations: 15 },
+            algorithm: 'gzip',
+            threshold: 1024,
+            minRatio: 0.8,
         }),
     ],
 };
