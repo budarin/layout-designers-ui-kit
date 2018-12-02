@@ -1,61 +1,17 @@
 import React from 'react';
 import cn from 'classnames';
 
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism-async-light';
+import docco from 'react-syntax-highlighter/styles/prism/vs';
+
 import useStyles from '../../hooks/useStyles';
 import contentCSS from './index.css';
 
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism-async-light';
-
-// import js from 'react-syntax-highlighter/languages/prism/javascript';
-// import css from 'react-syntax-highlighter/languages/prism/css';
-// import markdown from 'react-syntax-highlighter/languages/prism/markdown';
-
-import docco from 'react-syntax-highlighter/styles/prism/vs';
-
 import Button from './importdedComponents';
-
-// SyntaxHighlighter.registerLanguage('jsx', js);
-// SyntaxHighlighter.registerLanguage('css', css);
-// SyntaxHighlighter.registerLanguage('markdown', markdown);
-
-const codeString = `import React, { lazy, Suspense } from 'react';
-const OtherComponent = lazy(() => import('../../../components/Button'));
-
-function MyComponent() {
-    return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <OtherComponent />
-        </Suspense>
-    );
-}
-
-export default MyComponent;`;
-
-const cssString = `.foo {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    background: white;
-    color: black;
-}`;
-
-// const markdownString = `## React Syntax Highlighter
-
-// [![CircleCI](https://circleci.com/gh/conorhastings/react-syntax-highlighter.svg?style=svg)](https://circleci.com/gh/conorhastings/react-syntax-highlighter)
-// [![codecov](https://codecov.io/gh/conorhastings/react-syntax-highlighter/branch/master/graph/badge.svg)](https://codecov.io/gh/conorhastings/react-syntax-highlighter)
-// [![npm](https://img.shields.io/npm/dw/react-syntax-highlighter.svg?style=flat-square)](https://www.npmjs.com/package/react-syntax-highlighter)
-
-// Syntax highlighting component for \`React\` using the seriously super amazing <a href="https://github.com/wooorm/lowlight">lowlight</a> and <a href="https://github.com/wooorm/refractor">refractor</a> by <a href="https://github.com/wooorm">wooorm</a>
-
-// Check out a small website <a href="http://conor.rodeo/react-syntax-highlighter/website/">here</a> and see the component in action highlighting the generated test code <a href="http://conor.rodeo/redux-test-recorder/website/">here</a>.
-
-// For React Native you can use <a href='https://github.com/conorhastings/react-native-syntax-highlighter'>react-native-syntax-highlighter</a>
-
-// ### Install
-
-// \`npm install react-syntax-highlighter --save\`
-
-// ### Why This One?`;
+// tslint:disable-next-line
+const codeString = require('!!raw-loader!../../../components/Button/index.tsx');
+// tslint:disable-next-line
+const cssString = require('!!raw-loader!../../../components/Button/index.css');
 
 const Content = () => {
     const styles = useStyles([contentCSS]);

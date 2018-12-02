@@ -1,2 +1,3 @@
+-   react-hot-reloading babel plugin does not work yet
 -   jest
 -   macro

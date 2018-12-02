@@ -26,7 +26,7 @@ module.exports = {
     ],
     plugins: [
         'preval',
-        'react-hot-loader/babel',
+        // 'react-hot-loader/babel',
         '@babel/plugin-syntax-dynamic-import',
         '@babel/plugin-proposal-class-properties',
         ['babel-plugin-lodash', { id: ['lodash', 'recompose'] }],

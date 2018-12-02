@@ -4,7 +4,7 @@ import useStyles from '../../hooks/useStyles';
 import layoutCSS from './index.css';
 
 import SideBar from '../SideBar';
-// import Content from '../Content';
+import Content from '../Content';
 
 const AppLayout = () => {
     const styles = useStyles([layoutCSS]);
@@ -14,9 +14,9 @@ const AppLayout = () => {
             <aside>
                 <SideBar />
             </aside>
-            {/* <main className={styles.pageContent}>
+            <main className={styles.pageContent}>
                 <Content />
-            </main> */}
+            </main>
         </div>
     );
 };
