@@ -9,7 +9,7 @@ import demoPages from '../../../components/demoPages';
 const AppLayout = () => {
     const styles = useStyles([layoutCSS]);
     const [selectedPage, setSelectedPage] = useState('');
-    const pages = Object.keys(demoPages);
+    const pages = Object.keys(demoPages).sort();
     const page = demoPages[selectedPage] || (() => import(/* webpackChunkName: "IntroPage" */ '../IntroPage'));
 
     return (
