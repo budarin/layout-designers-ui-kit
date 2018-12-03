@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { SyntheticEvent, useCallback } from 'react';
 import useStyles from '../../hooks/useStyles';
 
 import menuCSS from './index.css';
@@ -11,13 +11,13 @@ interface ISideBarProps {
 
 const SideBar = ({ pages, selectedPage, setSelectedPage }: ISideBarProps) => {
     const styles = useStyles([menuCSS]);
-    const clickHandler = (event: SyntheticEvent<HTMLAnchorElement>) => {
+    const clickHandler = useCallback((event: SyntheticEvent<HTMLAnchorElement>) => {
         const pageName = event.currentTarget.dataset.name;
 
         if (pageName) {
             setSelectedPage(pageName);
         }
-    };
+    }, []);
 
     return (
         <nav className={styles.sidbar_nav}>
