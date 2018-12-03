@@ -1,0 +1,5 @@
+:root {
+    --shadow-small: 0 var(--x0_25) var(--x1) 0 var(--color_gray_25);
+    --shadow-medium: 0 var(--x1) var(--x2) 0 var(--color_gray_25);
+    --shadow-big: 0 var(--x2) var(--x4) 0 var(--color_gray_25);
+}

@@ -4,7 +4,7 @@ import ResultView from '../../website/components/ResultView';
 import HTMLView from '../../website/components/HTMLView';
 import CSSView from '../../website/components/CSSView';
 
-import Button from './index';
+import Demo from './index';
 import packageJson from './package.json';
 
 const codeString = require('!!raw-loader!./index.html');
@@ -15,7 +15,7 @@ const DemoPage = () => {
         <>
             <h2>Button</h2> ver. {packageJson.version}
             <ResultView>
-                <Button>Hello!</Button>
+                <Demo />
             </ResultView>
             <HTMLView>{codeString}</HTMLView>
             <CSSView>{cssString}</CSSView>
