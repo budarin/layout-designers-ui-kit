@@ -1,6 +1,5 @@
 const demoPages = {
-    Button: () => import('./Button/demo'),
-    Button1: () => import('./Button/demo'),
+    Button: () => import(/* webpackChunkName: "Button" */ './Button/demo'),
 };
 
 export default demoPages;

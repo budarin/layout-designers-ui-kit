@@ -9,7 +9,7 @@ const ResultView = props => {
     return (
         <div className={styles.preview} tabIndex={0}>
             <div className={styles.title}>
-                <h2>Пример</h2>
+                <h2>Result</h2>
             </div>
 
             {props.children}

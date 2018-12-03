@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from 'react';
 
-import useStyles from '../../hooks/useStyles';
 import contentCSS from './index.css';
+import useStyles from '../../hooks/useStyles';
 
 interface IContentProps {
-    page: () => {};
+    page: () => Promise<{ default: React.ComponentType<any> }>;
 }
 
 const Content = (props: IContentProps) => {

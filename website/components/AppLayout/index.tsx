@@ -10,7 +10,7 @@ const AppLayout = () => {
     const styles = useStyles([layoutCSS]);
     const [selectedPage, setSelectedPage] = useState('');
     const pages = Object.keys(demoPages);
-    const page = demoPages[selectedPage] || (() => import('../IntroPage'));
+    const page = demoPages[selectedPage] || (() => import(/* webpackChunkName: "IntroPage" */ '../IntroPage'));
 
     return (
         <div className={styles.container}>

@@ -6,7 +6,7 @@ import CSSView from '../../website/components/CSSView';
 
 import Button from './index';
 
-const codeString = require('!!raw-loader!./index.tsx');
+const codeString = require('!!raw-loader!./index.html');
 const cssString = require('!!raw-loader!./index.css');
 
 const DemoPage = () => {
@@ -15,7 +15,7 @@ const DemoPage = () => {
             <p>Некоторое описание компонента</p>
 
             <ResultView>
-                <Button />
+                <Button>Hello!</Button>
             </ResultView>
 
             <HTMLView>{codeString}</HTMLView>

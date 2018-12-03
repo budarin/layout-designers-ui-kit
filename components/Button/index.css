@@ -1,7 +1,5 @@
-.foo {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    background: white;
-    color: black;
+.btn {
+    border: 1px solid gray;
+    padding: 4px;
+    line-height: 24px;
 }
