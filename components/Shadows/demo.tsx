@@ -13,7 +13,7 @@ const cssString = require('!!raw-loader!./index.css');
 const DemoPage = () => {
     return (
         <>
-            <h2>Button</h2> ver. {packageJson.version}
+            <h2>Shadows</h2> ver. {packageJson.version}
             <ResultView>
                 <Demo />
             </ResultView>
