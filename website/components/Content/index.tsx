@@ -1,21 +1,12 @@
 import React from 'react';
-import cn from 'classnames';
-
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism-async-light';
-import docco from 'react-syntax-highlighter/styles/prism/vs';
 
 import useStyles from '../../hooks/useStyles';
 import contentCSS from './index.css';
 
-import Button from './importdedComponents';
-// tslint:disable-next-line
-const codeString = require('!!raw-loader!../../../components/Button/index.tsx');
-// tslint:disable-next-line
-const cssString = require('!!raw-loader!../../../components/Button/index.css');
+import DemoPage from '../../../components/Button/demo';
 
 const Content = () => {
     const styles = useStyles([contentCSS]);
-    const codePrevieClass = cn(styles.preview, styles.code);
 
     return (
         <>
@@ -32,39 +23,7 @@ const Content = () => {
             </div>
 
             <div className={styles.content}>
-                <p>Некоторое описание компонента</p>
-
-                <div className={styles.preview} tabIndex={0}>
-                    <div className={styles.title}>
-                        <h2>Пример</h2>
-                    </div>
-
-                    <Button />
-                </div>
-
-                <div className={codePrevieClass} tabIndex={0}>
-                    <div className={styles.title}>
-                        <div>
-                            <h2>HTML</h2>
-                        </div>
-                        <div className={styles.copy_btn}>Copy</div>
-                    </div>
-                    <SyntaxHighlighter language="jsx" style={docco}>
-                        {codeString}
-                    </SyntaxHighlighter>
-                </div>
-
-                <div className={codePrevieClass} tabIndex={0}>
-                    <div className={styles.title}>
-                        <div>
-                            <h2>CSS</h2>
-                        </div>
-                        <div className={styles.copy_btn}>Copy</div>
-                    </div>
-                    <SyntaxHighlighter language="css" style={docco}>
-                        {cssString}
-                    </SyntaxHighlighter>
-                </div>
+                <DemoPage />
             </div>
         </>
     );
