@@ -1,13 +1,12 @@
 import React from 'react';
 
+import ResultView from '../../website/components/ResultView';
 import HTMLView from '../../website/components/HTMLView';
 import CSSView from '../../website/components/CSSView';
 
 import Button from './index';
-import ResultView from '../../website/components/ResultView';
-// tslint:disable-next-line
+
 const codeString = require('!!raw-loader!./index.tsx');
-// tslint:disable-next-line
 const cssString = require('!!raw-loader!./index.css');
 
 const DemoPage = () => {
@@ -22,6 +21,8 @@ const DemoPage = () => {
             <HTMLView>{codeString}</HTMLView>
 
             <CSSView>{cssString}</CSSView>
+
+            <p>gfjgjhgjhgj</p>
         </>
     );
 };

@@ -5,10 +5,11 @@
     "rules": {
         "ordered-imports": false,
         "object-literal-sort-keys": false,
-        "no-implicit-dependencies": [true, "dev"],
+        "no-implicit-dependencies": [false, "dev"],
         "member-access": [true, "no-public"],
         "no-empty": false,
-        "no-submodule-imports": false
+        "no-submodule-imports": false,
+        "no-var-requires": false
     },
     "rulesDirectory": []
 }

@@ -3,7 +3,6 @@ const browserslist = packageJson.browserslist;
 
 module.exports = {
     babelrc: false,
-    cacheDirectory: '.tmp/babel/client',
     presets: [
         [
             '@babel/preset-env',
