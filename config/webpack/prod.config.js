@@ -1,11 +1,10 @@
 import path from 'path';
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import OptimizeJsPlugin from 'optimize-js-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 
 import babelConfig from './babelLoaderConfig';
 
@@ -65,7 +64,7 @@ module.exports = {
     },
     optimization: {
         occurrenceOrder: true,
-        minimizer: [new OptimizeJsPlugin({ sourceMap: false }), new TerserPlugin()],
+        minimizer: [new TerserPlugin()],
         runtimeChunk: {
             name: 'manifest',
         },

@@ -4,6 +4,8 @@ export interface IIndexCss {
     };
     readonly use: Function;
     readonly unuse: Function;
+    readonly source: string;
+    readonly btn: string;
 }
 
 declare const styles: IIndexCss;
