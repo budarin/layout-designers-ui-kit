@@ -12,7 +12,7 @@ const PreViewBlock = (title: string): SFC => props => {
         <div className={codePrevieClass} tabIndex={0}>
             <div className={styles.title}>
                 <div>
-                    <h2>{title}</h2>
+                    <h3>{title}</h3>
                 </div>
                 <div className={styles.copy_btn}>Copy</div>
             </div>
