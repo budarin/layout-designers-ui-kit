@@ -1,3 +1,4 @@
 -   react-hot-reloading babel plugin does not work yet
+-   add bundle analizer
 -   jest
 -   macro
