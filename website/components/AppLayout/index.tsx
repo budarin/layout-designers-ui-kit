@@ -1,21 +1,24 @@
-import React from 'react';
-import useStyles from '../../hooks/useStyles';
-
-import layoutCSS from './index.css';
+import React, { useState } from 'react';
 
 import SideBar from '../SideBar';
 import Content from '../Content';
+import layoutCSS from './index.css';
+import useStyles from '../../hooks/useStyles';
+import demoPages from '../../../components/demoPages';
 
 const AppLayout = () => {
     const styles = useStyles([layoutCSS]);
+    const [selectedPage, setSelectedPage] = useState('');
+    const pages = Object.keys(demoPages).sort();
+    const page = demoPages[selectedPage] || (() => import(/* webpackChunkName: "IntroPage" */ '../IntroPage'));
 
     return (
         <div className={styles.container}>
             <aside>
-                <SideBar />
+                <SideBar pages={pages} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
             </aside>
             <main className={styles.pageContent}>
-                <Content />
+                <Content page={page} />
             </main>
         </div>
     );

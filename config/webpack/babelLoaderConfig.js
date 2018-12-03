@@ -3,7 +3,6 @@ const browserslist = packageJson.browserslist;
 
 module.exports = {
     babelrc: false,
-    cacheDirectory: '.tmp/babel/client',
     presets: [
         [
             '@babel/preset-env',
@@ -14,10 +13,7 @@ module.exports = {
                 useBuiltIns: 'usage',
                 targets: {
                     // в разработке использовать только последние версии а в продакшене - нужные
-                    browsers:
-                        process.env.NODE_ENV === 'development'
-                            ? ['last 1 Chrome versions']
-                            : 'last 1 version, ' + browserslist, // @babel/preset-env has own list of browsers other than others
+                    browsers: process.env.NODE_ENV === 'development' ? ['last 1 Chrome versions'] : browserslist, // @babel/preset-env has own list of browsers other than others
                 },
             },
         ],

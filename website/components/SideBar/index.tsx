@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { SyntheticEvent, useCallback } from 'react';
 import useStyles from '../../hooks/useStyles';
 
 import menuCSS from './index.css';
 
-const SideBar = () => {
+interface ISideBarProps {
+    pages: string[];
+    selectedPage: string;
+    setSelectedPage: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const SideBar = ({ pages, selectedPage, setSelectedPage }: ISideBarProps) => {
     const styles = useStyles([menuCSS]);
+    const clickHandler = useCallback((event: SyntheticEvent<HTMLAnchorElement>) => {
+        const pageName = event.currentTarget.dataset.name;
+
+        if (pageName) {
+            setSelectedPage(pageName);
+        }
+    }, []);
 
     return (
         <nav className={styles.sidbar_nav}>
@@ -13,26 +26,15 @@ const SideBar = () => {
                 <b>Components</b>{' '}
             </div>
             <ul>
-                <li>
-                    <a href="">Component 1</a>
-                </li>
-                <li>
-                    <a href="">Component 2</a>
-                </li>
-                <li>
-                    <a className={styles.active} href="">
-                        Component 3
-                    </a>
-                </li>
-                <li>
-                    <a href="">Component 4</a>
-                </li>
-                <li>
-                    <a href="">Component 5</a>
-                </li>
-                <li>
-                    <a href="">Component 6</a>
-                </li>
+                {pages.map(page => {
+                    return (
+                        <li key={page} className={selectedPage === page ? styles.active : ''}>
+                            <a href="#" data-name={page} onClick={clickHandler}>
+                                {page}
+                            </a>
+                        </li>
+                    );
+                })}
             </ul>
         </nav>
     );

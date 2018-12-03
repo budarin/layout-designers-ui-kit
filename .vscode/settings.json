@@ -13,7 +13,7 @@
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
-    "prettier.stylelintIntegration": false,
+    "prettier.stylelintIntegration": true,
 
     // npm sripts
     "npm.enableScriptExplorer": true,
