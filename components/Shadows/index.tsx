@@ -13,13 +13,13 @@ const Shadows = () => {
     return (
         <>
             <div key="samll" className={styles.demoBox} style={{ boxShadow: 'var(--shadow-small)' }}>
-                SMALL SHADOW EXAMPLE
+                SMALL SHADOW
             </div>
             <div key="medium" className={styles.demoBox} style={{ boxShadow: 'var(--shadow-medium)' }}>
-                MEDIUM SHADOW EXAMPLE
+                MEDIUM SHADOW
             </div>
             <div key="large" className={styles.demoBox} style={{ boxShadow: 'var(--shadow-big)' }}>
-                BIG SHADOW EXAMPLE
+                BIG SHADOW
             </div>
         </>
     );
