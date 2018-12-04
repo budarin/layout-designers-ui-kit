@@ -109,7 +109,6 @@ module.exports = {
             append: false,
         }),
         new CompressionPlugin({
-            cache: '.tmp/gzip',
             filename: '[path].gz[query]',
             test: /\.js(\?.*)?$/i,
             compressionOptions: { level: 9, numiterations: 15 },

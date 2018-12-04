@@ -12,7 +12,7 @@
     },
     {
         "name": "build",
-        "command": "prun clean && webpack -p -r config/webpack/register-ts.js --config ./config/webpack/prod.config.js",
+        "command": "tsc && prun clean && webpack -p -r config/webpack/register-ts.js --config ./config/webpack/prod.config.js",
         "env": {
             "NODE_ENV": "production"
         }

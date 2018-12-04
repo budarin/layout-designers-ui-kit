@@ -17,6 +17,7 @@ const Content = (props: IContentProps) => {
                 <svg className={styles.menu_icon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 459 459">
                     <path d="M0 382.5h459v-51H0v51zM0 255h459v-51H0v51zM0 76.5v51h459v-51H0z" />
                 </svg>
+                <h3>Layout UI-Kit</h3>
             </div>
 
             <div className={styles.content}>

@@ -10,20 +10,10 @@ body,
 main {
     height: 100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0 0 var(--x4) 0;
-}
-li {
-    list-style: none;
-}
+
 p {
     margin: 0 0 var(--x4) 0;
 }
-a {
-    text-decoration: none;
+ul {
+    margin-left: var(--x4);
 }
