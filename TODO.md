@@ -3,3 +3,5 @@
 -   not working stylelint
 -   jest
 -   macro
+-   add script to upgrade command to upgrade react versions in html asset
+-   ask in forum about typing for useStyles

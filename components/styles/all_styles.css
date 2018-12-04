@@ -68,6 +68,8 @@
 }
 
 html,
-* {
+*,
+:before,
+:after {
     line-height: 1.5;
 }

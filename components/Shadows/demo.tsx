@@ -19,8 +19,10 @@ const DemoPage = () => {
             </ResultView>
             <HTMLView>{codeString}</HTMLView>
             <CSSView>{cssString}</CSSView>
-            <p>Descriptions:</p>
-            <p>Params:</p>
+            <section>
+                <p>Descriptions:</p>
+                <p>Params:</p>
+            </section>
         </>
     );
 };

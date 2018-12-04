@@ -1,9 +1,8 @@
 html {
-    overflow: hidden;
+    font-size: var(--x4);
     font-family: var(--font-family);
     min-width: 0;
-    font-size: var(--x4);
-    line-height: var(--line-height);
+    overflow: hidden;
 }
 html,
 body,
@@ -16,4 +15,7 @@ p {
 }
 ul {
     margin-left: var(--x4);
+}
+section {
+    padding-top: 32px;
 }
