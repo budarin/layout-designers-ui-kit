@@ -29,7 +29,7 @@ const SideBar = ({ pages, selectedPage, setSelectedPage }: ISideBarProps) => {
                 {pages.map(page => {
                     return (
                         <li key={page} className={selectedPage === page ? styles.active : ''}>
-                            <a href="#" data-name={page} onClick={clickHandler}>
+                            <a href="#" data-name={page} onClick={clickHandler} title={page}>
                                 {page}
                             </a>
                         </li>

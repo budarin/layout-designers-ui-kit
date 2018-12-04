@@ -3,7 +3,6 @@ import React from 'react';
 const IntroPgae = () => (
     <>
         <h2>Intro</h2>
-
         <p>
             Проект предназначен для разработки верстки и стилей компонент проекта.
             <br />
