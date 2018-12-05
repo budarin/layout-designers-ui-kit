@@ -1,28 +1,25 @@
 import React from 'react';
-import CSS from './index.css';
+
+import demoCSS from './demo.css';
+import indexCSS from './index.css';
+
 import useStyles from '../../website/hooks/useStyles';
 
 const Shadows = () => {
-    useStyles([CSS]);
+    const styles = useStyles([demoCSS]);
 
-    const boxStyles = {
-        margin: '40px auto',
-        'max-width': '300px',
-        padding: '20px',
-        'text-align': 'center',
-        'box-sizing': 'border-box',
-    };
+    useStyles([indexCSS]);
 
     return (
         <>
-            <div key="samll" style={{ ...boxStyles, boxShadow: 'var(--shadow-small)' }}>
-                SMALL SHADOW EXAMPLE
+            <div key="samll" className={styles.demoBox} style={{ boxShadow: 'var(--shadow-small)' }}>
+                SMALL SHADOW
             </div>
-            <div key="medium" style={{ ...boxStyles, boxShadow: 'var(--shadow-medium)' }}>
-                MEDIUM SHADOW EXAMPLE
+            <div key="medium" className={styles.demoBox} style={{ boxShadow: 'var(--shadow-medium)' }}>
+                MEDIUM SHADOW
             </div>
-            <div key="large" style={{ ...boxStyles, boxShadow: 'var(--shadow-big)' }}>
-                BIG SHADOW EXAMPLE
+            <div key="large" className={styles.demoBox} style={{ boxShadow: 'var(--shadow-big)' }}>
+                BIG SHADOW
             </div>
         </>
     );

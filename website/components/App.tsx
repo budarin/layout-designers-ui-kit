@@ -10,7 +10,11 @@ import appCSS from './app.css';
 const App = () => {
     useStyles([globalStyles, appCSS]);
 
-    return <AppLayout />;
+    return (
+        <React.StrictMode>
+            <AppLayout />;
+        </React.StrictMode>
+    );
 };
 
 export default App;

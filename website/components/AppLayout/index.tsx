@@ -10,7 +10,7 @@ const AppLayout = () => {
     const styles = useStyles([layoutCSS]);
     const [selectedPage, setSelectedPage] = useState('');
     const pages = Object.keys(demoPages).sort();
-    const page = demoPages[selectedPage] || (() => import(/* webpackChunkName: "IntroPage" */ '../IntroPage'));
+    const getPage = demoPages[selectedPage] || (() => import(/* webpackChunkName: "IntroPage" */ '../IntroPage'));
 
     return (
         <div className={styles.container}>
@@ -18,7 +18,7 @@ const AppLayout = () => {
                 <SideBar pages={pages} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
             </aside>
             <main className={styles.pageContent}>
-                <Content page={page} />
+                <Content getPage={getPage} />
             </main>
         </div>
     );

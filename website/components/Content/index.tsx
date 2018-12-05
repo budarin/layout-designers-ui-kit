@@ -4,12 +4,14 @@ import contentCSS from './index.css';
 import useStyles from '../../hooks/useStyles';
 
 interface IContentProps {
-    page: () => Promise<{ default: React.ComponentType<any> }>;
+    getPage: () => Promise<{ default: React.ComponentType<any> }>;
 }
+
+const loading = <div>Loading...</div>;
 
 const Content = (props: IContentProps) => {
     const styles = useStyles([contentCSS]);
-    const Component = lazy(async () => props.page());
+    const Component = lazy(async () => props.getPage());
 
     return (
         <>
@@ -21,7 +23,7 @@ const Content = (props: IContentProps) => {
             </div>
 
             <div className={styles.content}>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={loading}>
                     <Component />
                 </Suspense>
             </div>

@@ -47,10 +47,10 @@ module.exports = {
                         options: {
                             modules: true,
                             browser: true,
-                            server: true,
+                            server: false,
                             camelCase: true,
                             importLoaders: 1,
-                            localIdentName: '[hash:base64:8]',
+                            localIdentName: '[name].[local]_[hash:7]',
                             sourceMap: false,
                             minify: true,
                         },
