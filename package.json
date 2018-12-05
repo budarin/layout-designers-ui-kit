@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "UI Kit for layout designer",
     "main": "dist/index.js",
+    "engines": {
+        "node": ">=11.0.0"
+    },
     "scripts": {
         "start": "prun start",
         "build": "prun build",
