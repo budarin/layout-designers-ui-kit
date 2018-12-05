@@ -9,11 +9,6 @@ export interface IIndexCss {
         readonly version_component: string;
         readonly versionComponent: string;
         readonly content: string;
-        readonly preview: string;
-        readonly code: string;
-        readonly title: string;
-        readonly copy_btn: string;
-        readonly copyBtn: string;
     };
     readonly use: Function;
     readonly unuse: Function;

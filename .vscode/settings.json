@@ -13,7 +13,7 @@
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
-    "prettier.stylelintIntegration": true,
+    "prettier.stylelintIntegration": false,
 
     // npm sripts
     "npm.enableScriptExplorer": true,
@@ -28,5 +28,7 @@
     "workbench.statusBar.feedback.visible": false,
     "workbench.sideBar.location": "left",
     "git.confirmSync": false,
-    "eslint.enable": false
+    "eslint.enable": false,
+    "typescript.surveys.enabled": false,
+    "editor.snippetSuggestions": "top"
 }

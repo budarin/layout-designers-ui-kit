@@ -3,19 +3,22 @@
 }
 
 .preview {
+    font-family: 'open_sans';
     border-radius: 4px;
-    padding: 8px 32px 9px 16px;
     height: auto;
-    min-height: auto;
-    margin-top: 32px;
+    max-height: 200px;
+    margin: 0 0 16px 0;
     border: 1px solid rgba(11, 31, 53, 0.1);
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr;
 }
-
 .preview:focus {
-    height: auto;
+    max-height: 100%;
+    outline: 0;
+    box-shadow: var(--shadow-small) var(--color_white_25);
 }
-
 .preview.code .title {
     display: flex;
     justify-content: space-between;
@@ -32,12 +35,16 @@
 }
 .preview .title {
     background: #eee;
-    margin: -8px -32px 16px -16px;
     padding: 8px 0 8px 16px;
+    grid-row: 1 / 2;
 }
 .preview .title h2 {
     margin: 0 0 0 0;
     font-weight: 400;
+}
+.preview .description {
+    grid-row: 2 / 3;
+    padding: 8px 16px;
 }
 .copy_btn {
     color: #000;
@@ -48,7 +55,6 @@
     background: #fff;
     visibility: hidden;
 }
-
 .preview:hover .copy_btn {
     visibility: visible;
 }
