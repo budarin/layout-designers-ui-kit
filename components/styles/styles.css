@@ -1,96 +1,27 @@
-:root {
-    /* COLOR VARIABLES */
-    --color_orange: var(--custom-color_01, #ff9900);
-    --color_orange_75: var(--custom-color_02, #ffcc00);
-    --color_white_25: var(--custom-color_03, #fff6d1);
-    --color_white_50: var(--custom-color_04, #ffffcc);
-    --color_purple_25: var(--custom-color_05, #9900ff);
-    --color_purple_50: var(--custom-color_06, #660099);
-    --color_purple_75: var(--custom-color_07, #4f196d);
-    --color_purple: var(--custom-color_08, #330066);
-    --color_green: var(--custom-color_09, #66cc00);
-    --color_green_75: var(--custom-color_10, #00cc00);
-    --color_white: var(--custom-color_11, #ffffff);
-    --color_black: var(--custom-color_12, #000000);
-    --color_gray: var(--custom-color_13, #666666);
-    --color_gray_75: var(--custom-color_14, #999999);
-    --color_gray_50: var(--custom-color_15, #cccccc);
-    --color_gray_25: var(--custom-color_16, #e3e3e3);
-    --color_black_50: var(--custom-color_17, rgba(0, 0, 0, 0.5));
-    --color_black_0: var(--custom-color_18, rgba(0, 0, 0, 0.1));
-
-    /* SIZE VARIABLES */
-    --base-size: 4;
-    --x0_25: calc(0.25 * var(--base-size) * 1px);
-    --x1: calc(var(--base-size) * 1px);
-    --x1_5: calc(1.5 * var(--base-size) * 1px);
-    --x2: calc(2 * var(--base-size) * 1px);
-    --x2_5: calc(2.5 * var(--base-size) * 1px);
-    --x3: calc(3 * var(--base-size) * 1px);
-    --x3_5: calc(3.5 * var(--base-size) * 1px);
-    --x4: calc(4 * var(--base-size) * 1px);
-    --x4_5: calc(4.5 * var(--base-size) * 1px);
-    --x5: calc(5 * var(--base-size) * 1px);
-    --x6: calc(6 * var(--base-size) * 1px);
-    --x7: calc(7 * var(--base-size) * 1px);
-    --x8: calc(8 * var(--base-size) * 1px);
-    --x9: calc(9 * var(--base-size) * 1px);
-    --x10: calc(10 * var(--base-size) * 1px);
-    --x11: calc(11 * var(--base-size) * 1px);
-    --x12: calc(12 * var(--base-size) * 1px);
-    --x13: calc(13 * var(--base-size) * 1px);
-    --x14: calc(14 * var(--base-size) * 1px);
-    --x15: calc(15 * var(--base-size) * 1px);
-    --x16: calc(16 * var(--base-size) * 1px);
-    --x17: calc(17 * var(--base-size) * 1px);
-    --x18: calc(18 * var(--base-size) * 1px);
-    --x: var(--line-height);
-
-    /* BORDER SIZE VARIABLES*/
-    --border-width: var(--x0_25);
-
-    /* SHADOW VARIABLES*/
-    --shadow-color: var(--color_black_50);
-    --shadow-small: 0 var(--x0_25) var(--x1) 0;
-    --shadow-medium: 0 var(--x1) var(--x2) 0;
-    --shadow-big: 0 var(--x2) var(--x4) 0;
-
-    /* MEDIA QUERIES */
-    --desktop: 1280px;
-    --desktop-small: 960px;
-    --tablet: 800px;
-    --tablet-small: 640px;
-    --mobile: 480px;
-    --mobile-small: 375px;
-
-    /* FONT VARIABLES */
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans',
-        'Droid Sans', 'Helvetica Neue', sans-serif;
-    --line-height: calc(var(--x4) * 1.5);
-    --font-weight-regular: 400;
-    --font-weight-bold: 700;
-
-    /* BORDER RADIUS VARIABLE*/
-    --border-radius-x1: var(--x1);
-    --border-radius-50: 50%;
-    --radius: var(--x1);
-
-    /* PADDING VARIABLES */
-    --padding-x8: 0 var(--x8);
-    --padding-x6: 0 var(--x6);
-    --padding-x5: 0 var(--x5);
-    --padding-x4: 0 var(--x4);
-    --padding-x2_5: 0 var(--x2_5);
-    --padding-x2: 0 var(--x2);
-}
-
-html {
-    line-height: 1.5;
-}
-
 html,
 body {
+    line-height: 1.5;
     height: 100%;
+}
+*,
+::before,
+::after {
+    line-height: 1.5;
+}
+@font-face {
+    font-family: 'open_sans';
+    src: local('open_sans'), url('./font/open-sans-400.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'open_sans';
+    src: local('open_sans'), url('./font/open-sans-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 svg {

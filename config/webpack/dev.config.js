@@ -33,6 +33,13 @@ module.exports = {
                 },
             },
             {
+                test: /\.(eot|otf|woff|woff2|ttf)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[hash].[ext]',
+                },
+            },
+            {
                 test: /\.css$/,
                 use: [
                     {

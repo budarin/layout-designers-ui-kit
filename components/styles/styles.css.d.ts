@@ -1,4 +1,4 @@
-export interface IAll_stylesCss {
+export interface IStylesCss {
     readonly locals: {
         readonly x1: string;
         readonly x2: string;
@@ -95,6 +95,6 @@ export interface IAll_stylesCss {
     readonly unuse: Function;
 }
 
-declare const styles: IAll_stylesCss;
+declare const styles: IStylesCss;
 
 export default styles;
