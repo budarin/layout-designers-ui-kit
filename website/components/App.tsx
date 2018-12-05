@@ -12,7 +12,7 @@ const App = () => {
 
     return (
         <React.StrictMode>
-            <AppLayout />;
+            <AppLayout />
         </React.StrictMode>
     );
 };

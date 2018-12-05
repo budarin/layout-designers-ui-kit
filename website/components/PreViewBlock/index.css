@@ -35,11 +35,9 @@
 }
 .preview .title {
     background: #eee;
-    padding: 8px 0 8px 16px;
     grid-row: 1 / 2;
 }
 .preview .title h2 {
-    margin: 0 0 0 0;
     font-weight: 400;
 }
 .preview .description {

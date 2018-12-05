@@ -22,8 +22,7 @@ const SideBar = ({ pages, selectedPage, setSelectedPage }: ISideBarProps) => {
     return (
         <nav className={styles.sidbar_nav}>
             <div className={styles.title}>
-                {' '}
-                <b>Components</b>{' '}
+                <h3>Components</h3>
             </div>
             <ul>
                 {pages.map(page => {

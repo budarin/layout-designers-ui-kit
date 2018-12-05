@@ -9,7 +9,7 @@ const ResultView = props => {
     return (
         <div className={styles.preview} tabIndex={0}>
             <div className={styles.title}>
-                <h3>Result</h3>
+                <h3 style={{ marginTop: 0 }}>Result</h3>
             </div>
 
             {props.children}
