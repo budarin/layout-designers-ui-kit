@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 
 import contentCSS from './index.css';
 import useStyles from '../../hooks/useStyles';
+import ErrorBoundary from '../ErrorBoundary';
 
 interface IContentProps {
     getPage: () => Promise<{ default: React.ComponentType<any> }>;
@@ -23,9 +24,11 @@ const Content = (props: IContentProps) => {
             </div>
 
             <div className={styles.content}>
-                <Suspense fallback={loading}>
-                    <Component />
-                </Suspense>
+                <ErrorBoundary>
+                    <Suspense fallback={loading}>
+                        <Component />
+                    </Suspense>
+                </ErrorBoundary>
             </div>
         </>
     );
