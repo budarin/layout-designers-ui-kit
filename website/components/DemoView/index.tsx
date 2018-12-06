@@ -3,18 +3,17 @@ import React from 'react';
 import useStyles from '../../hooks/useStyles';
 import PreViewBlockCSS from '../PreViewBlock/index.css';
 
-const ResultView = props => {
+const DemoView = props => {
     const styles = useStyles([PreViewBlockCSS]);
 
     return (
         <div className={styles.preview} tabIndex={0}>
             <div className={styles.title}>
-                <h3 style={{ marginTop: 0 }}>Result</h3>
+                <h3>Demo</h3>
             </div>
-
-            {props.children}
+            <div className={styles.content}>{props.children}</div>
         </div>
     );
 };
 
-export default ResultView;
+export default DemoView;

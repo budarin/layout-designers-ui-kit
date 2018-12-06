@@ -1,0 +1,10 @@
+.demoPageTitle {
+    & h2 {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+}
+
+.version {
+    color: blue;
+}

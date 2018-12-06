@@ -1,18 +1,18 @@
 /* LAYOUT */
 .container {
     height: 100%;
-    transition: all 300ms ease-out;
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 240px 1fr;
     grid-template-rows: 100%;
     margin-left: 0px;
     overflow: hidden;
+    transition: all 200ms ease-out;
 }
 .container.no_margin_left {
-    margin-left: -250px;
+    margin-left: -240px;
 }
 aside {
-    width: 250px;
+    width: 100%;
     color: #333;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
