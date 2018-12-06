@@ -13,9 +13,7 @@ const DemoPageTitle = (props: IDemoPageTitleProps) => {
 
     return (
         <div className={styles.demoPageTitle}>
-            <h2>{props.title}</h2>
-            &nbsp;&nbsp;&nbsp;
-            <span>ver: </span>
+            <h2>{props.title}</h2>&nbsp;&nbsp;&nbsp;<span>ver: </span>
             <span className={styles.version}>{props.version}</span>
         </div>
     );
