@@ -20,6 +20,7 @@ module.exports = {
         path: path.resolve('./dist'),
         chunkFilename: '[name].[chunkhash].js',
         hotUpdateChunkFilename: '[id].[hash].hot-update.js',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -34,9 +35,11 @@ module.exports = {
             },
             {
                 test: /\.(eot|otf|woff|woff2|ttf)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[hash].[ext]',
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                    },
                 },
             },
             {
