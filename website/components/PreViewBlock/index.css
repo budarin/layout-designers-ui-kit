@@ -3,13 +3,12 @@
 }
 
 .preview {
-    font-family: 'open_sans';
-    border-radius: 4px;
-    height: auto;
-    margin-top: var(--x8);
-    border: 1px solid rgba(11, 31, 53, 0.1);
-    overflow: hidden;
     display: grid;
+    margin-top: var(--x8);
+    height: auto;
+    overflow: hidden;
+    border: 1px solid rgba(11, 31, 53, 0.1);
+    border-radius: 4px;
     grid-template-columns: 1fr;
     grid-template-rows: 40px 1fr;
 }
@@ -30,11 +29,11 @@
 }
 .title {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: var(--x2) var(--x2);
     background: rgb(244, 245, 247);
     grid-row: 1 / 2;
-    padding: var(--x2) var(--x2);
 }
 .title h3 {
     margin-top: 0;
@@ -47,14 +46,14 @@
 .copy_btn {
     flex-grow: 0;
     flex-shrink: 0;
-    color: #000;
     padding: 4px;
-    cursor: pointer;
+    width: 60px;
+    visibility: hidden;
     border: 1px solid #aaa;
     border-radius: var(--x1);
     background: #fff;
-    visibility: hidden;
-    width: 60px;
+    color: #000;
+    cursor: pointer;
 }
 .preview:hover .copy_btn {
     visibility: visible;

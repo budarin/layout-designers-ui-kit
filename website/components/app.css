@@ -6,12 +6,12 @@ html,
 }
 
 html {
-    color: rgb(66, 82, 110);
-    font-size: var(--x4);
-    font-family: var(--font-family);
-    font-family: 'open_sans';
     min-width: 0;
     overflow: hidden;
+    color: rgb(66, 82, 110);
+    font-family: 'open_sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans',
+        'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: var(--x4);
 }
 html,
 body,
@@ -36,44 +36,44 @@ html,
 }
 body,
 :global(.article) {
+    margin: auto;
     font-size: 1rem;
     line-height: 1.5rem;
-    margin: auto;
 }
 h1,
 :global(.h1) {
-    font-size: 2.375rem;
-    line-height: 3rem;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
+    font-size: 2.375rem;
+    line-height: 3rem;
 }
 h2,
 :global(.h2) {
-    font-size: 1.75rem;
-    line-height: 3rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    line-height: 3rem;
 }
 h3,
 :global(.h3) {
-    font-size: 1.3125rem;
-    line-height: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
+    font-size: 1.3125rem;
+    line-height: 1.5rem;
 }
 h4,
 :global(.h4) {
-    font-size: 1rem;
-    line-height: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 h5,
 :global(.h5) {
-    font-size: 1rem;
-    line-height: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 p,
 ul,
@@ -93,8 +93,8 @@ ol ul {
 /* Let's make sure all's aligned */
 hr,
 :global(.hr) {
-    border: 1px solid;
     margin: -1px 0;
+    border: 1px solid;
 }
 a,
 b,
@@ -107,8 +107,8 @@ code {
 }
 sub,
 sup {
-    line-height: 0;
     position: relative;
+    line-height: 0;
     vertical-align: baseline;
 }
 sup {

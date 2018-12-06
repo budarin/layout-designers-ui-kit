@@ -1,7 +1,7 @@
 html,
 body {
-    line-height: 1.5;
     height: 100%;
+    line-height: 1.5;
 }
 *,
 ::before,
@@ -11,26 +11,26 @@ body {
 @font-face {
     font-family: 'open_sans';
     src: local('open_sans'), url('./fonts/open-sans-400.woff2') format('woff2');
-    font-weight: 400;
     font-style: normal;
+    font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'open_sans';
     src: local('open_sans'), url('./fonts/open-sans-700.woff2') format('woff2');
-    font-weight: 700;
     font-style: normal;
+    font-weight: 700;
     font-display: swap;
 }
 
 svg {
+    position: relative;
     display: inline-block;
     fill: 'currentcolor';
-    height: 1.25em;
     max-width: 100%;
     width: 100%;
-    position: relative;
+    height: 1.25em;
     user-select: none;
     vertical-align: text-bottom;
 }
@@ -225,8 +225,8 @@ svg {
     height: 3px;
 }
 ::-webkit-scrollbar-button {
-    background-color: #666;
     display: none;
+    background-color: #666;
 }
 ::-webkit-scrollbar-track {
     background-color: #999;
@@ -235,8 +235,8 @@ svg {
     background-color: var(--color_gray_50);
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color_gray);
     border-radius: 3px;
+    background-color: var(--color_gray);
 }
 ::-webkit-scrollbar-corner {
     background-color: #999;
