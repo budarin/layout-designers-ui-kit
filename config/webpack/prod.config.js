@@ -21,6 +21,7 @@ module.exports = {
         filename: 'index.[contenthash].js',
         path: path.resolve('./dist'),
         chunkFilename: '[name].[chunkhash].js',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -35,9 +36,11 @@ module.exports = {
             },
             {
                 test: /\.(eot|otf|woff|woff2|ttf)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[hash].[ext]',
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[hash].[ext]',
+                    },
                 },
             },
             {

@@ -10,7 +10,7 @@ body {
 }
 @font-face {
     font-family: 'open_sans';
-    src: local('open_sans'), url('./font/open-sans-400.woff2') format('woff2');
+    src: local('open_sans'), url('./fonts/open-sans-400.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -18,7 +18,7 @@ body {
 
 @font-face {
     font-family: 'open_sans';
-    src: local('open_sans'), url('./font/open-sans-700.woff2') format('woff2');
+    src: local('open_sans'), url('./fonts/open-sans-700.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
