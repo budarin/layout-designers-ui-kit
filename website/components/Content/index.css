@@ -1,80 +1,33 @@
 /* RIGHT SIDE STYLE */
 .top_bar {
-    background: #eee;
+    background: rgb(244, 245, 247);
     display: flex;
     align-items: center;
-    flex-grow: 0;
-    flex-shrink: 0;
-    height: 36px;
+    height: 48px;
+
+    & h3 {
+        color: #70727b;
+        margin-top: 0;
+    }
 }
 .menu_icon {
-    width: 16px;
-    height: 16px;
+    fill: #70727b;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     padding: var(--x2_5);
-    box-sizing: content-box;
 }
 .title_component {
     padding: 0 20px;
-    line-height: 36px;
 }
-.version_component {
-    line-height: 36px;
-}
+
 .content {
-    padding: var(--x4) var(--x8);
-    overflow-y: scroll;
-    flex-grow: 1;
-    flex-shrink: 1;
+    padding: 0 var(--x8);
+    height: calc(100% - 48px);
+    max-width: 1300px;
+    margin: 0 auto;
 }
-.preview.code {
-    background: #fff;
+.content-wrapper {
+    overflow-y: auto;
+    height: calc(100% - 48px);
 }
-.preview {
-    border-radius: 4px;
-    padding: 8px 32px 9px 16px;
-    height: auto;
-    min-height: auto;
-    margin: 0 0 16px 0;
-    border: 1px solid rgba(11, 31, 53, 0.1);
-    overflow: hidden;
-}
-.preview:focus {
-    height: auto;
-}
-.preview.code .title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.title div {
-    flex-grow: 1;
-    flex-shrink: 1;
-}
-.title .copy_btn {
-    flex-grow: 0;
-    flex-shrink: 0;
-    width: 60px;
-}
-.preview .title {
-    background: #eee;
-    margin: -8px -32px 16px -16px;
-    padding: 8px 0 8px 16px;
-}
-.preview .title h2 {
-    margin: 0 0 0 0;
-    font-weight: 400;
-}
-.copy_btn {
-    color: #000;
-    padding: 4px 8px;
-    cursor: pointer;
-    border: 1px solid #aaa;
-    border-radius: var(--x1);
-    background: #fff;
-    visibility: hidden;
-}
-.preview:hover .copy_btn {
-    visibility: visible;
-}
-/* RIGHT STYLE end*/

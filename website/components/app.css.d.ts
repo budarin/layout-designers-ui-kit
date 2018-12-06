@@ -1,5 +1,7 @@
 export interface IAppCss {
-    readonly locals: {};
+    readonly locals: {
+        readonly root: string;
+    };
     readonly use: Function;
     readonly unuse: Function;
 }

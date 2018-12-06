@@ -1,0 +1,246 @@
+html,
+body {
+    line-height: 1.5;
+    height: 100%;
+}
+*,
+::before,
+::after {
+    line-height: 1.5;
+}
+@font-face {
+    font-family: 'open_sans';
+    src: local('open_sans'), url('./font/open-sans-400.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'open_sans';
+    src: local('open_sans'), url('./font/open-sans-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+svg {
+    display: inline-block;
+    fill: 'currentcolor';
+    height: 1.25em;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    user-select: none;
+    vertical-align: text-bottom;
+}
+
+/* SIZES CLASS */
+.x1 {
+    --x: var(--x1);
+}
+.x2 {
+    --x: var(--x2);
+}
+.x3 {
+    --x: var(--x3);
+}
+.x4 {
+    --x: var(--x4);
+}
+.x5 {
+    --x: var(--x5);
+}
+.x6 {
+    --x: var(--x6);
+}
+.x7 {
+    --x: var(--x7);
+}
+.x8 {
+    --x: var(--x8);
+}
+.x9 {
+    --x: var(--x9);
+}
+.x10 {
+    --x: var(--x10);
+}
+.x11 {
+    --x: var(--x11);
+}
+.x12 {
+    --x: var(--x12);
+}
+.x13 {
+    --x: var(--x13);
+}
+.x14 {
+    --x: var(--x14);
+}
+.x15 {
+    --x: var(--x15);
+}
+.x16 {
+    --x: var(--x16);
+}
+.x17 {
+    --x: var(--x17);
+}
+.x18 {
+    --x: var(--x18);
+}
+
+/* COLOR CLASS */
+.color-orange {
+    --color: var(--color_orange);
+}
+.bg-color-orange {
+    --bg-color: var(--color_orange);
+}
+
+.color-orange-75 {
+    --color: var(--color_orange_75);
+}
+.bg-color-orange-75 {
+    --bg-color: var(--color_orange_75);
+}
+
+.color-white {
+    --color: var(--color_white);
+}
+.bg-color-white {
+    --bg-color: var(--color_white);
+}
+
+.color-white-25 {
+    --color: var(--color_white_25);
+}
+.bg-color-white-25 {
+    --bg-color: var(--color_white_25);
+}
+
+.color-white-50 {
+    --color: var(--color_white_50);
+}
+.bg-color-white-50 {
+    --bg-color: var(--color_white_50);
+}
+
+.color-purple {
+    --color: var(--color_purple);
+}
+.bg-color-purple {
+    --bg-color: var(--color_purple);
+}
+
+.color-purple-25 {
+    --color: var(--color_purple_25);
+}
+.bg-color-purple-25 {
+    --bg-color: var(--color_purple_25);
+}
+
+.color-purple-50 {
+    --color: var(--color_purple_50);
+}
+.bg-color-purple-50 {
+    --bg-color: var(--color_purple_50);
+}
+
+.color-purple-75 {
+    --color: var(--color_purple_75);
+}
+.bg-color-purple-75 {
+    --bg-color: var(--color_purple_75);
+}
+
+.color-green {
+    --color: var(--color_green);
+}
+.bg-color-green {
+    --bg-color: var(--color_green);
+}
+
+.color-green-75 {
+    --color: var(--color_green_75);
+}
+.bg-color-green-75 {
+    --bg-color: var(--color_green_75);
+}
+
+.color-black {
+    --color: var(--color_black);
+}
+.bg-color-black {
+    --bg-color: var(--color_black);
+}
+
+.color-black-50 {
+    --color: var(--color_black_50);
+}
+.bg-color-black-50 {
+    --bg-color: var(--color_black_50);
+}
+
+.color-gray {
+    --color: var(--color_gray);
+}
+.bg-color-gray {
+    --bg-color: var(--color_gray);
+}
+
+.color-gray-75 {
+    --color: var(--color_gray_75);
+}
+.bg-color-gray-75 {
+    --bg-color: var(--color_gray_75);
+}
+
+.color-gray-50 {
+    --color: var(--color_gray_50);
+}
+.bg-color-gray-50 {
+    --bg-color: var(--color_gray_50);
+}
+
+.color-gray-25 {
+    --color: var(--color_gray_25);
+}
+.bg-color-gray-25 {
+    --bg-color: var(--color_gray_25);
+}
+
+/* RADIUS CLASS */
+.border-radius-x1 {
+    --radius: var(--border-radius-x1);
+}
+.border-radius-50 {
+    --radius: var(--border-radius-50);
+}
+
+/* scrollbar styles */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 3px;
+}
+::-webkit-scrollbar-button {
+    background-color: #666;
+    display: none;
+}
+::-webkit-scrollbar-track {
+    background-color: #999;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: var(--color_gray_50);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--color_gray);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-corner {
+    background-color: #999;
+}
+::-webkit-resizer {
+    background-color: #666;
+}

@@ -1,6 +1,5 @@
 .demoBox {
-    margin: 40px auto;
-    maxwidth: 300px;
+    margin: var(--x4);
     padding: 20px;
     textalign: center;
     boxsizing: border-box;

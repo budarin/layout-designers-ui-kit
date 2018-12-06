@@ -1,9 +1,7 @@
 export interface IIndexCss {
     readonly locals: {
-        readonly sidbar_nav: string;
-        readonly sidbarNav: string;
-        readonly title: string;
-        readonly active: string;
+        readonly demoPageTitle: string;
+        readonly version: string;
     };
     readonly use: Function;
     readonly unuse: Function;

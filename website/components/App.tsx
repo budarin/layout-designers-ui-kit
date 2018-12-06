@@ -4,15 +4,16 @@ import useStyles from '../hooks/useStyles';
 
 import AppLayout from '../components/AppLayout';
 
-import globalStyles from '../../components/styles/all_styles.css';
+import variablesCSS from '../../components/styles/variables.css';
+import stylesCSS from '../../components/styles/styles.css';
 import appCSS from './app.css';
 
 const App = () => {
-    useStyles([globalStyles, appCSS]);
+    useStyles([variablesCSS, stylesCSS, appCSS]);
 
     return (
         <React.StrictMode>
-            <AppLayout />;
+            <AppLayout />
         </React.StrictMode>
     );
 };

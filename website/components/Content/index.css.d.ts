@@ -6,14 +6,9 @@ export interface IIndexCss {
         readonly menuIcon: string;
         readonly title_component: string;
         readonly titleComponent: string;
-        readonly version_component: string;
-        readonly versionComponent: string;
         readonly content: string;
-        readonly preview: string;
-        readonly code: string;
-        readonly title: string;
-        readonly copy_btn: string;
-        readonly copyBtn: string;
+        readonly 'content-wrapper': string;
+        readonly contentWrapper: string;
     };
     readonly use: Function;
     readonly unuse: Function;

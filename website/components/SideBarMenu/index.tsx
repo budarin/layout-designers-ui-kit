@@ -9,7 +9,7 @@ interface ISideBarProps {
     setSelectedPage: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const SideBar = ({ pages, selectedPage, setSelectedPage }: ISideBarProps) => {
+const SideBarMenu = ({ pages, selectedPage, setSelectedPage }: ISideBarProps) => {
     const styles = useStyles([menuCSS]);
     const clickHandler = useCallback((event: SyntheticEvent<HTMLAnchorElement>) => {
         const pageName = event.currentTarget.dataset.name;
@@ -20,16 +20,21 @@ const SideBar = ({ pages, selectedPage, setSelectedPage }: ISideBarProps) => {
     }, []);
 
     return (
-        <nav className={styles.sidbar_nav}>
+        <nav className={styles.componentList}>
             <div className={styles.title}>
-                {' '}
-                <b>Components</b>{' '}
+                <b>Components</b>
             </div>
             <ul>
                 {pages.map(page => {
                     return (
-                        <li key={page} className={selectedPage === page ? styles.active : ''}>
-                            <a href="#" data-name={page} onClick={clickHandler} title={page}>
+                        <li key={page}>
+                            <a
+                                href="#"
+                                data-name={page}
+                                onClick={clickHandler}
+                                title={page}
+                                className={selectedPage === page ? styles.active : ''}
+                            >
                                 {page}
                             </a>
                         </li>
@@ -40,4 +45,4 @@ const SideBar = ({ pages, selectedPage, setSelectedPage }: ISideBarProps) => {
     );
 };
 
-export default SideBar;
+export default SideBarMenu;

@@ -3,52 +3,66 @@
 }
 
 .preview {
+    font-family: 'open_sans';
     border-radius: 4px;
-    padding: 8px 32px 9px 16px;
     height: auto;
-    min-height: auto;
-    margin-top: 32px;
+    margin-top: var(--x8);
     border: 1px solid rgba(11, 31, 53, 0.1);
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr;
 }
 
-.preview:focus {
-    height: auto;
+.collapsible {
+    max-height: 200px;
 }
 
-.preview.code .title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.collapsible:focus {
+    max-height: 100%;
+    outline: 0;
+    box-shadow: var(--shadow-small) var(--color_white_25);
 }
+
 .title div {
     flex-grow: 1;
     flex-shrink: 1;
 }
-.title .copy_btn {
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(244, 245, 247);
+    grid-row: 1 / 2;
+    padding: var(--x2) var(--x2);
+}
+.title h3 {
+    margin-top: 0;
+}
+.description {
+    grid-row: 2 / 3;
+    padding: 8px 16px;
+}
+
+.copy_btn {
     flex-grow: 0;
     flex-shrink: 0;
-    width: 60px;
-}
-.preview .title {
-    background: #eee;
-    margin: -8px -32px 16px -16px;
-    padding: 8px 0 8px 16px;
-}
-.preview .title h2 {
-    margin: 0 0 0 0;
-    font-weight: 400;
-}
-.copy_btn {
     color: #000;
-    padding: 4px 8px;
+    padding: 4px;
     cursor: pointer;
     border: 1px solid #aaa;
     border-radius: var(--x1);
     background: #fff;
     visibility: hidden;
+    width: 60px;
 }
-
 .preview:hover .copy_btn {
     visibility: visible;
+}
+.content {
+    padding: var(--x2);
+}
+
+.preview pre {
+    margin: 0 !important;
 }

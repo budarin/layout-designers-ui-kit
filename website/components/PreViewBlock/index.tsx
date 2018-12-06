@@ -6,7 +6,7 @@ import PreViewBlockCSS from './index.css';
 
 const PreViewBlock = (title: string): SFC => props => {
     const styles = useStyles([PreViewBlockCSS]);
-    const codePrevieClass = cn(styles.preview, styles.code);
+    const codePrevieClass = cn(styles.preview, styles.code, styles.collapsible);
 
     return (
         <div className={codePrevieClass} tabIndex={0}>
@@ -17,7 +17,7 @@ const PreViewBlock = (title: string): SFC => props => {
                 <div className={styles.copy_btn}>Copy</div>
             </div>
 
-            {props.children}
+            <div>{props.children}</div>
         </div>
     );
 };
