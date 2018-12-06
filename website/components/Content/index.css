@@ -1,31 +1,31 @@
 /* RIGHT SIDE STYLE */
 .top_bar {
-    background: rgb(244, 245, 247);
     display: flex;
     align-items: center;
     height: 48px;
+    background: rgb(244, 245, 247);
 
     & h3 {
-        color: #70727b;
         margin-top: 0;
+        color: #70727b;
     }
 }
 .menu_icon {
     fill: #70727b;
+    padding: var(--x2_5);
     width: 20px;
     height: 20px;
     cursor: pointer;
-    padding: var(--x2_5);
 }
 .title_component {
     padding: 0 20px;
 }
 
 .content {
-    padding: 0 var(--x8);
-    height: calc(100% - 48px);
-    max-width: 1300px;
     margin: 0 auto;
+    padding: 0 var(--x8);
+    max-width: 1300px;
+    height: calc(100% - 48px);
 }
 .content-wrapper {
     overflow-y: auto;
