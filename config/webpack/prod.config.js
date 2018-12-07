@@ -90,7 +90,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.json'],
-        modules: ['node_modules', 'src'],
+        modules: ['node_modules', 'components', 'website'],
     },
     externals: {
         react: 'React',
