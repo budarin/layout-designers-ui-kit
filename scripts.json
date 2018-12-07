@@ -11,8 +11,12 @@
         "command": "rimraf ./dist"
     },
     {
+        "name": "type-check",
+        "command": "tsc"
+    },
+    {
         "name": "build",
-        "command": "tsc && prun clean && webpack -p -r config/webpack/register-ts.js --config ./config/webpack/prod.config.js",
+        "command": "prun type-check && prun clean && webpack -p -r config/webpack/register-ts.js --config ./config/webpack/prod.config.js",
         "env": {
             "NODE_ENV": "production"
         }
