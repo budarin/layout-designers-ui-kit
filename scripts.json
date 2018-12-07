@@ -16,7 +16,7 @@
     },
     {
         "name": "build",
-        "command": "prun type-check && prun clean && webpack -p -r config/webpack/register-ts.js --config ./config/webpack/prod.config.js",
+        "command": "prun type-check && prun clean && webpack --display-error-details -p -r config/webpack/register-ts.js --config ./config/webpack/prod.config.js",
         "env": {
             "NODE_ENV": "production"
         }
