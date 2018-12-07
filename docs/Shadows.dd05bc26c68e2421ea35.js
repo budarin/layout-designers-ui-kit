@@ -108,7 +108,7 @@
         F0FH: function(n, e, o) {
             (e = n.exports = o('I1BE')(!1)).push([
                 n.i,
-                '.index-demoPageTitle_522f3c2 {\n    & h2 {\n        display: inline-block;\n        margin-bottom: 0;\n    }\n}\n\n.index-version_d078df1 {\n    color: blue;\n}\n',
+                '.index-demoPageTitle_522f3c2 h2 {\n    display: inline-block;\n    margin-bottom: 0;\n}\n\n.index-version_d078df1 {\n    color: blue;\n}\n',
                 '',
             ]),
                 (e.locals = { demoPageTitle: 'index-demoPageTitle_522f3c2', version: 'index-version_d078df1' });
