@@ -6,3 +6,4 @@
 -   add script to upgrade command to upgrade react versions in html asset
 -   ask in forum about typing for useStyles
 -   update ErrorBoundary class to hook when it will be avalable
+-   add github page
