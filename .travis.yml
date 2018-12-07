@@ -4,7 +4,6 @@ node_js:
     - '10'
 install:
     - npm ci
-build:
-    - npm run build
 script:
+    - npm run build
     - npm test
