@@ -119,7 +119,7 @@
         (a.o = function(e, t) {
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
-        (a.p = '/'),
+        (a.p = ''),
         (a.oe = function(e) {
             throw (console.error(e), e);
         });
