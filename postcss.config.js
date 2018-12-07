@@ -22,7 +22,15 @@ const config = {
 if (process.env.NODE_ENV === 'production') {
     config.plugins.push(
         require('cssnano')({
-            preset: 'default',
+            preset: [
+                'default',
+                {
+                    normalizeUrl: false, //do not modify urls & not breaks file-loader
+                    discardComments: {
+                        removeAll: true,
+                    },
+                },
+            ],
         }),
     );
 }
