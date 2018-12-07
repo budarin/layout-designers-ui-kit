@@ -4,11 +4,10 @@
     align-items: center;
     height: 48px;
     background: rgb(244, 245, 247);
-
-    & h3 {
-        margin-top: 0;
-        color: #70727b;
-    }
+}
+.top_bar h3 {
+    margin-top: 0;
+    color: #70727b;
 }
 .menu_icon {
     fill: #70727b;
