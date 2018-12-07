@@ -21,7 +21,6 @@ module.exports = {
         filename: 'index.[contenthash].js',
         path: path.resolve('./dist'),
         chunkFilename: '[name].[chunkhash].js',
-        publicPath: '/',
     },
     module: {
         rules: [
