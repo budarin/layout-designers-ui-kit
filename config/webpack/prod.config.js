@@ -54,6 +54,7 @@ module.exports = {
                     {
                         loader: '@budarin/ts-css-loader',
                         options: {
+                            EOL: 'LF',
                             modules: true,
                             browser: true,
                             server: false,
